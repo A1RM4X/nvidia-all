@@ -868,15 +868,15 @@ DEST_MODULE_LOCATION[3]="/kernel/drivers/video"' dkms.conf
         fi
       fi
 
-      # 6.1-6-7-8 GPL
-      if (( $(vercmp "$_kernel" "6.1") >= 0 )) || (( $(vercmp "$_kernel" "6.6") >= 0 )) || (( $(vercmp "$_kernel" "6.7") >= 0 )) || (( $(vercmp "$_kernel" "6.8") >= 0 )); then
-        if [[ $pkgver = 470.* ]] || [[ $pkgver = 535.* ]] || [[ $pkgver = 545.* ]] || [[ $pkgver = 550.* ]]; then
-          cd "$srcdir"/"$_pkg"/kernel-$_kernel
-          msg2 "Applying 6.1-6-7-8-gpl.diff for $_kernel..."
-          patch -Np2 -i "$srcdir"/6.1-6-7-8-gpl.diff
-          cd ..
-        fi
-      fi
+#      # 6.1-6-7-8 GPL
+#      if (( $(vercmp "$_kernel" "6.1") >= 0 )) || (( $(vercmp "$_kernel" "6.6") >= 0 )) || (( $(vercmp "$_kernel" "6.7") >= 0 )) || (( $(vercmp "$_kernel" "6.8") >= 0 )); then
+#        if [[ $pkgver = 470.* ]] || [[ $pkgver = 535.* ]] || [[ $pkgver = 545.* ]] || [[ $pkgver = 550.* ]]; then
+#          cd "$srcdir"/"$_pkg"/kernel-$_kernel
+#          msg2 "Applying 6.1-6-7-8-gpl.diff for $_kernel..."
+#          patch -Np2 -i "$srcdir"/6.1-6-7-8-gpl.diff
+#          cd ..
+#        fi
+#      fi
 
       # Loop patches (linux-4.15.patch, lol.patch, ...)
       for _p in $(printf -- '%s\n' ${source[@]} | grep .patch); do  # https://stackoverflow.com/a/21058239/1821548
