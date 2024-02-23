@@ -1389,13 +1389,13 @@ DEST_MODULE_LOCATION[3]="/kernel/drivers/video"' dkms.conf
       fi
 
       # 6.1-6-7-8 GPL
-      if (( $(vercmp "$_kernel" "6.1") >= 0 )) || (( $(vercmp "$_kernel" "6.6") >= 0 )) || (( $(vercmp "$_kernel" "6.7") >= 0 )) || (( $(vercmp "$_kernel" "6.8") >= 0 )); then
-        if [[ $pkgver = 470.* ]] || [[ $pkgver = 535.* ]] || [[ $pkgver = 545.* ]] || [[ $pkgver = 550.* ]]; then
-          msg2 "Applying 6.1-6-7-8-gpl.diff for dkms..."
-          patch -Np1 -i "$srcdir"/6.1-6-7-8-gpl.diff
-          cd ..
-        fi
-      fi
+#      if (( $(vercmp "$_kernel" "6.1") >= 0 )) || (( $(vercmp "$_kernel" "6.6") >= 0 )) || (( $(vercmp "$_kernel" "6.7") >= 0 )) || (( $(vercmp "$_kernel" "6.8") >= 0 )); then
+#        if [[ $pkgver = 470.* ]] || [[ $pkgver = 535.* ]] || [[ $pkgver = 545.* ]] || [[ $pkgver = 550.* ]]; then
+#          msg2 "Applying 6.1-6-7-8-gpl.diff for dkms..."
+#          patch -Np1 -i "$srcdir"/6.1-6-7-8-gpl.diff
+#          cd ..
+#        fi
+#      fi
 
       # Legacy quirks
       if [ "$_oldstuff" = "1" ]; then
